@@ -5,68 +5,69 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"
+        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="./style.css">
+
     <title>Document</title>
 </head>
 
 <body>
     <div class="frame">
-        <div class="center">
-
-            <div class="profile">
-                <div class="image">
-                    <div class="circle-1"></div>
-                    <div class="circle-2"></div>
-                    <img src="./avt.jpg" width="70" height="70" alt="Jessica Potter">
+        <div class="panel">
+            <div class="header">
+                <div class="menu-icon">
+                    <div class="dash-top"></div>
+                    <div class="dash-bottom"></div>
+                    <div class="circle"></div>
                 </div>
-
-                <div class="name">Ngọc Lam</div>
-                <div class="job">Visual Artist</div>
-
-                <div class="actions">
-                    <button class="btn">Follow</button>
-                    <button class="btn">Message</button>
-                </div>
+                <span class="title">Notifications</span>
+                <input type="text" class="search-input" placeholder="Search ...">
+                <div class="fa fa-search search-icon"></div>
             </div>
 
-            <div class="stats">
-                <div class="box">
-                    <span id="count1"></span>
-                    <span class="parameter">Posts</span>
+            <div class="notifications clearfix">
+                <div class="line"></div>
+                <div class="notification">
+                    <div class="circle"></div>
+                    <span class="time">9:24 AM</span>
+                    <p><b>John Walker</b> posted a photo on your wall.</p>
                 </div>
-                <div class="box">
-                    <span id="count2"></span>
-                    <span class="parameter">Likes</span>
+                <div class="notification">
+                    <div class="circle"></div>
+                    <span class="time">8:19 AM</span>
+                    <p><b>Alice Parker</b> commented your last post.</p>
                 </div>
-                <div class="box">
-                    <span id="count3"></span>
-                    <span class="parameter">Follower</span>
+                <div class="notification">
+                    <div class="circle"></div>
+                    <span class="time">Yesterday</span>
+                    <p><b>Luke Wayne</b> added you as friend.</p>
                 </div>
             </div>
         </div>
+
+        <div class="menu">
+            <ul>
+                <li><span class="fa fa-dashboard"></span>Dashboard</li>
+                <li><span class="fa fa-user"></span>Profile</li>
+                <li><span class="fa fa-bell"></span>Notifications</li>
+                <li><span class="fa fa-comments"></span>Messages</li>
+                <li><span class="fa fa-gear"></span>Settings</li>
+            </ul>
+        </div>
+
     </div>
 
     <script>
-        document.addEventListener("DOMContentLoaded", () => {
-            function counter(id, start, end, duration) {
-                let obj = document.getElementById(id),
-                    current = start,
-                    range = end - start,
-                    increment = end > start ? 1 : -1,
-                    step = Math.abs(Math.floor(duration / range)),
-                    timer = setInterval(() => {
-                        current += increment;
-                        obj.textContent = current;
-                        if (current == end) {
-                            clearInterval(timer);
-                        }
-                    }, step);
-            }
-            counter("count1", 0, 456, 4000);
-            counter("count2", 0, 827, 400);
-            counter("count3", 0, 325, 3000);
+        $('.search-icon').bind('click', function () {
+            $('.search-input').toggleClass('active');
         });
 
+        $('.menu-icon').bind('click', function () {
+            $('.panel').toggleClass('show-menu');
+            $('.menu').toggleClass('active');
+        });
     </script>
 </body>
 
