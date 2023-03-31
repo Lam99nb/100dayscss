@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="frame">
+        <div class="center">
+
+            <div class="profile">
+                <div class="image">
+                    <div class="circle-1"></div>
+                    <div class="circle-2"></div>
+                    <img src="./avt.jpg" width="70" height="70" alt="Jessica Potter">
+                </div>
+
+                <div class="name">Ngọc Lam</div>
+                <div class="job">Visual Artist</div>
+
+                <div class="actions">
+                    <button class="btn">Follow</button>
+                    <button class="btn">Message</button>
+                </div>
+            </div>
+
+            <div class="stats">
+                <div class="box">
+                    <span id="count1"></span>
+                    <span class="parameter">Posts</span>
+                </div>
+                <div class="box">
+                    <span id="count2"></span>
+                    <span class="parameter">Likes</span>
+                </div>
+                <div class="box">
+                    <span id="count3"></span>
+                    <span class="parameter">Follower</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            function counter(id, start, end, duration) {
+                let obj = document.getElementById(id),
+                    current = start,
+                    range = end - start,
+                    increment = end > start ? 1 : -1,
+                    step = Math.abs(Math.floor(duration / range)),
+                    timer = setInterval(() => {
+                        current += increment;
+                        obj.textContent = current;
+                        if (current == end) {
+                            clearInterval(timer);
+                        }
+                    }, step);
+            }
+            counter("count1", 0, 456, 4000);
+            counter("count2", 0, 827, 400);
+            counter("count3", 0, 325, 3000);
+        });
+
+    </script>
+</body>
+
+</html>
