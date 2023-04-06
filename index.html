@@ -2,71 +2,70 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"
         integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./style.css" />
 
     <title>Document</title>
 </head>
 
 <body>
     <div class="frame">
-        <div class="panel">
-            <div class="header">
-                <div class="menu-icon">
-                    <div class="dash-top"></div>
-                    <div class="dash-bottom"></div>
-                    <div class="circle"></div>
-                </div>
-                <span class="title">Notifications</span>
-                <input type="text" class="search-input" placeholder="Search ...">
-                <div class="fa fa-search search-icon"></div>
+        <div class="profile" id="profile-1">
+            <img src="https://100dayscss.com/codepen/13-1.jpg" alt="" />
+            <div class="overlay"></div>
+            <div class="plus"></div>
+        </div>
+        <div class="profile" id="profile-2">
+            <img src="https://100dayscss.com/codepen/13-2.jpg" alt="" />
+            <div class="overlay"></div>
+            <div class="plus"></div>
+        </div>
+        <div class="profile" id="profile-3">
+            <img src="https://100dayscss.com/codepen/13-3.jpg" alt="" />
+            <div class="overlay"></div>
+            <div class="plus"></div>
+        </div>
+        <div class="profile" id="profile-4">
+            <img src="https://100dayscss.com/codepen/13-4.jpg" alt="" />
+            <div class="overlay"></div>
+            <div class="plus"></div>
+        </div>
+        <div class="detail" id="detail-1">
+            <div class="close"></div>
+            <img class="header" src="https://100dayscss.com/codepen/13-1-header.jpg" />
+            <div class="image">
+                <img src="https://100dayscss.com/codepen/13-1.jpg" />
             </div>
-
-            <div class="notifications clearfix">
-                <div class="line"></div>
-                <div class="notification">
-                    <div class="circle"></div>
-                    <span class="time">9:24 AM</span>
-                    <p><b>John Walker</b> posted a photo on your wall.</p>
-                </div>
-                <div class="notification">
-                    <div class="circle"></div>
-                    <span class="time">8:19 AM</span>
-                    <p><b>Alice Parker</b> commented your last post.</p>
-                </div>
-                <div class="notification">
-                    <div class="circle"></div>
-                    <span class="time">Yesterday</span>
-                    <p><b>Luke Wayne</b> added you as friend.</p>
+            <div class="infos">
+                <div class="name">Julia Toth</div>
+                <div class="action">
+                    <div class="btn">
+                        <span class="fa fa-phone"></span>
+                    </div>
+                    <div class="btn">
+                        <span class="fa fa-comment"></span>
+                    </div>
+                    <div class="btn">
+                        <span class="fa fa-heart"></span>
+                    </div>
                 </div>
             </div>
         </div>
-
-        <div class="menu">
-            <ul>
-                <li><span class="fa fa-dashboard"></span>Dashboard</li>
-                <li><span class="fa fa-user"></span>Profile</li>
-                <li><span class="fa fa-bell"></span>Notifications</li>
-                <li><span class="fa fa-comments"></span>Messages</li>
-                <li><span class="fa fa-gear"></span>Settings</li>
-            </ul>
-        </div>
-
     </div>
 
     <script>
-        $('.search-icon').bind('click', function () {
-            $('.search-input').toggleClass('active');
+        $('.profile').bind('click', function () {
+
+            $('.detail').addClass('active');
         });
 
-        $('.menu-icon').bind('click', function () {
-            $('.panel').toggleClass('show-menu');
-            $('.menu').toggleClass('active');
+        $('.close').bind('click', function () {
+            $('.detail').removeClass('active');
         });
     </script>
 </body>
